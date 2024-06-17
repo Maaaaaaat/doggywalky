@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_17_131415) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_17_151358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_17_131415) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "profile_groups", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_profile_groups_on_group_id"
+    t.index ["profile_id"], name: "index_profile_groups_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -69,6 +78,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_17_131415) do
   end
 
   add_foreign_key "dogs", "profiles"
+  add_foreign_key "profile_groups", "groups"
+  add_foreign_key "profile_groups", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "walks", "groups"
   add_foreign_key "walks", "profiles"
