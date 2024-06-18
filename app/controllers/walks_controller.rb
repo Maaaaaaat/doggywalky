@@ -10,9 +10,7 @@ class WalksController < ApplicationController
 
   def create
   end
+  
   def update
-  end
-
-  def create
   end
 end

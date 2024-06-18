@@ -1,3 +1,4 @@
 class Group < ApplicationRecord
-  belongs_to :walk
+  has_many :walks
+  has_many :profile_groups
 end
