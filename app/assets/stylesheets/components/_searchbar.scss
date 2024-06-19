@@ -1,17 +1,1 @@
-// Pour que la search soit sur la carte
-.div1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1; /* Pour contrôler l'empilement des divs */
-}
 
-// Style de la search bar
-.bouton-search{
- /* haut | horizontal | bas */
-  margin: 16px 29% 0;
-}
-
-.style-search{
-  border-radius: 30%;
-}
