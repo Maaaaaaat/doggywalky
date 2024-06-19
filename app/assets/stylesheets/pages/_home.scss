@@ -1,47 +1,26 @@
-// Specific CSS for your home-page
+/* Specific CSS for your home-page */
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
+/* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 }
 
-// Large devices (desktops, 992px and up)
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
 .card-category {
-  margin: 30px;
+  margin: 30px 0;
   background-size: cover;
   background-position: center;
   height: 180px;
@@ -62,9 +41,13 @@
   border-radius: 4px;
   background: #670BFF;
   transition: background 0.3s ease;
+  margin-bottom: 15px;
 }
 
 .btn-flat:hover {
   background: #4D04C4;
   color: white;
+}
+body {
+  padding-bottom: 60px; /* Adjust this value based on the height of your navbar */
 }
