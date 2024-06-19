@@ -7,3 +7,7 @@ application.debug = false
 window.Stimulus   = application
 
 export { application }
+
+// app/javascript/packs/application.js
+import "controllers";
+
