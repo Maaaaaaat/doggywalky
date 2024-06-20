@@ -1,35 +1,58 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+<h2 class="mt-5">Mettre le compte à jour</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :email, required: true, autofocus: true, label_html: { class: 'form-label-custom' }, input_html: { class: 'custom-class' }   %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
     <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+                hint: "Laissez blanc si vous ne voulez pas le changer",
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                label: "Mot de passe",
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "new-password", class: 'custom-class' } %>
     <%= f.input :password_confirmation,
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
+                label: "Confirmation du nouveau mot de passe",
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "new-password", class: 'custom-class' } %>
     <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                hint: "Rentrez votre mot de passe ancien",
                 required: true,
-                input_html: { autocomplete: "current-password" } %>
+                label: "Mot de passe ancien",
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "current-password", class: 'custom-class' } %>
+    <%= f.input :first_name,
+                label: "Prénom",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "first_name", class: 'custom-class' } %>
+    <%= f.input :last_name,
+                label: "Nom",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "last_name", class: 'custom-class' }%>
+
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Valider 🐶", class: "button-form" %>
   </div>
 <% end %>
+<div class="d-flex flex-column align-items-end">
+<div class="pt-4 pb-2">
+<%= button_to "Supprimer le compte", registration_path(resource_name), data: { confirm: "Confirmer la suppression?", turbo_confirm: "Confirmer la suppression?" }, method: :delete %>
+</div>
 
-<h3>Cancel my account</h3>
+<%= link_to "Retour", :back %>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>
+</div>
