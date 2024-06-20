@@ -1,12 +1,34 @@
 .navbar-lewagon {
-  justify-content: space-between;
   background: white;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Fixed bottom navbar */
+.navbar-fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
-.navbar-lewagon .navbar-brand img {
+/* Padding for body to avoid content being hidden behind navbar */
+body {
+  padding-bottom: 60px; /* Adjust this value based on the height of your navbar */
+}
+
+.navbar-brand img {
   width: 40px;
+}
+
+.nav-link i {
+  font-size: 18px; /* Adjust the size as needed */
+}
+
+.d-flex.justify-content-around {
+  flex: 1;
+}
+
+.navbar-nav.ms-auto {
+  display: flex;
+  align-items: center;
 }
