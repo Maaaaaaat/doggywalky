@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
 Group.destroy_all
 Profile.destroy_all
 User.destroy_all
@@ -63,3 +64,4 @@ puts "Finished!"
 # pro_group.profile = profile1
 # pro_group.group = group1
 # pro_group.save
+

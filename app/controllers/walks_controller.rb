@@ -1,5 +1,7 @@
 class WalksController < ApplicationController
   def index
+    @group = Group.find(params[:id])
+    
   end
 
   def show
@@ -10,7 +12,7 @@ class WalksController < ApplicationController
 
   def create
   end
-  
+
   def update
   end
 end
