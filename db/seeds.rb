@@ -64,4 +64,3 @@ puts "Finished!"
 # pro_group.profile = profile1
 # pro_group.group = group1
 # pro_group.save
-
