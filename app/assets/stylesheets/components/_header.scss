@@ -1,0 +1,45 @@
+
+.main-content {
+  padding-top: 50px;
+}
+
+.header {
+  background-color: #e36251;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.fixed-top {
+  position: fixed;
+  top: O;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.header .avatar {
+  height: 30px; /* Ajustez la taille de l'avatar selon vos besoins */
+  width: 30px; /* Ajustez la taille de l'avatar selon vos besoins */
+  border-radius: 50%; /* Rend l'image circulaire */
+}
+
+.header-container {
+  background-color: orange;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.header .avatar-bordered {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
