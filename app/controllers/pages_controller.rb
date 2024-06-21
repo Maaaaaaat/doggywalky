@@ -12,13 +12,8 @@ class PagesController < ApplicationController
     end
   end
 
-  def search
+    def search
     @walks = Walk.all
-    @groups = Group.all
-
-    if params[:city].present?
-      @groups = @groups.where(city: params[:city])
-    end
 
     if params[:date].present?
       @walks = @walks.where(date: params[:date])
@@ -28,9 +23,14 @@ class PagesController < ApplicationController
       @walks = @walks.where(start_time: params[:start_time])
     end
 
-    if params[:address].present?
-      @walks = @walks.where(address: params[:address])
+    if params[:adress].present?
+      @walks = @walks.where('adress ILIKE ?', "%#{params[:adress]}%")
     end
 
+
+    @groups = Group.joins(:walks).where(walks: { id: @walks.pluck(:id) }).distinct
+
+    @walks = [] if params.except(:controller, :action).empty?
   end
+
 end
