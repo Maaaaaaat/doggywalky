@@ -2,11 +2,11 @@
 
 <div class="button-group">
   <div class="button-group-category" >
-    <%= link_to 'Crée ta Sortie', group_walks_path(@group) %>
+    <%= link_to 'Les sorties', group_walks_path(@group) %>
   </div>
 
   <div class="button-group-category" >
-    Crée ta Sortie
+    <%= link_to 'Crée ta Sortie', new_group_walk_path(@group) %>
   </div>
 
   <div class="button-group-category" >

@@ -1,16 +1,33 @@
-<p>ceci est un titre</p>
+<div class="container">
+<h2 class="mt-5">Crée ta Sortie</h2>
 
 <%= simple_form_for [@group, @walk] do |f| %>
-  <div class="form-group">
-    <%= f.input :date, label: "Date de la sortie", input_html: { class: 'form-control' } %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :date,
+                label: "Jour de la sortie",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "date", class: 'custom-class' } %>
+    <%= f.input :start_time,
+                label: "Heure du rendez-vous",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "start_time", class: 'custom-class' }%>
+    <%= f.input :adress,
+                label: "Lieu de la sortie",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "adress", class: 'custom-class' }%>
   </div>
-  <div class="form-group">
-    <%= f.input :start_time, label: "Heure de la sortie", input_html: { class: 'form-control' } %>
-  </div>
-  <div class="form-group">
-    <%= f.input :address, label: "Adresse de la sortie", input_html: { class: 'form-control' } %>
-  </div>
-  <div class="form-group">
-    <%= f.button :submit, "Créer la sortie", class: "btn btn-primary" %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Valider 🐶", class: "button-form" %>
   </div>
 <% end %>
+
+</div>
