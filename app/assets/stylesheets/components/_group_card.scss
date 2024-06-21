@@ -5,9 +5,12 @@
 
 .btn-div {
   margin-top: 15%;
-  margin-left: auto;
+  margin-left: -40%;
   margin-bottom: 10%;
+  display: flex;
+  flex-direction: row-reverse;
 }
+
 
 .card-product {
   overflow: hidden;
@@ -65,4 +68,10 @@
   @media (max-width: 430px) {
     padding: 8px;
   }
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
