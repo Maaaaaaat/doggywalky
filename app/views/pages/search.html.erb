@@ -1,1 +1,9 @@
-oi
+<div class="container">
+<h2 class="mt-5">Recherche</h2>
+
+<%= simple_form_for @dogs do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :species, collection: Pet::SPECIES %>
+  <%= f.input :found_on %>
+  <%= f.submit class: "btn btn-primary mt-4" %>

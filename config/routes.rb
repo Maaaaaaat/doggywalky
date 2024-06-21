@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   end
 
   resources :walks, only: [:delete, :edit, :update]
+  resources :pets, only: [:index]
   # root "posts#index"
 end
