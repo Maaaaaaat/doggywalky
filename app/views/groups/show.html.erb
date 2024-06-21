@@ -1,8 +1,8 @@
-<h1 style="margin-left: 150px; margin-top: 15px;">Nom du groupe</h1>
+<h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="button-group">
   <div class="button-group-category" >
-    Les Sorties
+    <%= link_to 'Crée ta Sortie', group_walks_path(@group) %>
   </div>
 
   <div class="button-group-category" >

@@ -1,32 +1,18 @@
+<h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
+
 <div class="contain">
+   <% if @walks.any? %>
+      <% @walks.each do |walk|%>
   <div class="card-product">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Nom de la sortie</h2>
-      <p>Jour et Heure</p>
-      <p>Address precise</p>
-      <p>Nombres de participant</p>
-    </div>
+        <div class="card-product-infos">
+          <h2><%= walk.date %></h2>
+          <p><%= walk.start_time %></p>
+          <p><%= walk.adress %></p>
+        </div>
   </div>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-    </div>
+   <% end %>
+      <div class="card-product">
   </div>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-    </div>
-  </div>
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-    </div>
-  </div>
+  <% end %>
 </div>
