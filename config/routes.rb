@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :walks, only: [:delete, :edit, :update]
-  # root "posts#index"
+
+  resources :groups do
+  get 'group_user', to: 'groups#group_user'
+  end
 end
+  # root "posts#index"

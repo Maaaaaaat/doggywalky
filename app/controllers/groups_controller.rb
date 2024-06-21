@@ -22,6 +22,12 @@ class GroupsController < ApplicationController
     end
   end
 
+  def group_user
+    @group = Group.find(params[:group_id])
+    @profiles = @group.profiles
+
+  end
+
   # def destroy
   #   @group = Group.find(params[:id])
   #   @group.destroy
@@ -30,9 +36,9 @@ class GroupsController < ApplicationController
 
   private
 
-  def set_profile
-    @profile = Profile.find(params[:profile_id])
-  end
+  # def set_profile
+  #   @profile = Profile.find(params[:profile_id])
+  # end
 
   def groups_params
     params.require(:group).permit(:name, :description, :city)
