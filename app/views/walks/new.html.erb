@@ -1,2 +1,16 @@
-<h1>Walks#new</h1>
-<p>Find me in app/views/walks/new.html.erb</p>
+<p>ceci est un titre</p>
+
+<%= simple_form_for [@group, @walk] do |f| %>
+  <div class="form-group">
+    <%= f.input :date, label: "Date de la sortie", input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :start_time, label: "Heure de la sortie", input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.input :address, label: "Adresse de la sortie", input_html: { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.button :submit, "Créer la sortie", class: "btn btn-primary" %>
+  </div>
+<% end %>
