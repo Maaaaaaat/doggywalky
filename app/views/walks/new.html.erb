@@ -1,2 +1,33 @@
-<h1>Walks#new</h1>
-<p>Find me in app/views/walks/new.html.erb</p>
+<div class="container">
+<h2 class="mt-5">Crée ta Sortie</h2>
+
+<%= simple_form_for [@group, @walk] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :date,
+                label: "Jour de la sortie",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "date", class: 'custom-class' } %>
+    <%= f.input :start_time,
+                label: "Heure du rendez-vous",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "start_time", class: 'custom-class' }%>
+    <%= f.input :adress,
+                label: "Lieu de la sortie",
+                required: true,
+                autofocus: true,
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "adress", class: 'custom-class' }%>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Valider 🐶", class: "button-form" %>
+  </div>
+<% end %>
+
+</div>
