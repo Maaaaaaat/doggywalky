@@ -1,4 +1,5 @@
 class Group < ApplicationRecord
+
   has_many :walks
   has_many :profile_groups
   has_many :profiles, through: :profile_groups

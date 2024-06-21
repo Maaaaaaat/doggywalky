@@ -1,0 +1,38 @@
+<div class="container">
+  <h2 class="mt-5">Recherche</h2>
+
+  <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do |f| %>
+    <div class="form-group">
+      <%= f.date_field :date, class: "form-control", placeholder: "Date", autocomplete: "off" %>
+    </div>
+    <div class="form-group">
+      <%= f.time_field :start_time, class: "form-control", placeholder: "Heure de début", autocomplete: "off" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :adress, class: "form-control", placeholder: "Adresse de la promenade", autocomplete: "off" %>
+    </div>
+    <%= f.submit "Rechercher", class: "btn btn-primary mt-2" %>
+  <% end %>
+
+  <% if @groups.any? %>
+    <h3>Groupes et Promenades</h3>
+    <div class="cards">
+      <% @groups.each do |group| %>
+        <div class="card mb-3">
+          <h4><%= group.name %></h4>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"  width="200px"/>
+          <div>
+            <% group.walks.where(id: @walks.pluck(:id)).each do |walk| %>
+              <p><strong>Date:</strong> <%= walk.date %></p>
+              <p><strong>Heure de début:</strong> <%= walk.start_time %></p>
+              <p><strong>Adresse:</strong> <%= walk.adress %></p>
+              <!-- Ajoutez d'autres informations pertinentes pour Walk ici -->
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p>Aucun résultat trouvé correspondant à votre recherche.</p>
+  <% end %>
+</div>
