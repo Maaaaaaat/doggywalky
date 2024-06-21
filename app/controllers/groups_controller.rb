@@ -1,11 +1,6 @@
 class GroupsController < ApplicationController
   def index
     @profile = current_user.profile
-
-    if @profile.nil?
-      redirect_to new_profile_path, alert: 'Please create a profile first.' and return
-    end
-
     @groups = @profile.groups
   end
 
