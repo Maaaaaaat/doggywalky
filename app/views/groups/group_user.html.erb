@@ -1,0 +1,11 @@
+<h1>Tu es sur la view des membres d'un groupe</h1>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+      <% @profiles.each do |profile|%>
+  <div class="card-product-infos">
+    <h2><%= profile.username %></h2>
+    <p><%= profile.city %></p>
+  </div>
+  <% end %>
+</div>
