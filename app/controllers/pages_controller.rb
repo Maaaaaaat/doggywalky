@@ -11,4 +11,26 @@ class PagesController < ApplicationController
       }
     end
   end
+
+  def search
+    @walks = Walk.all
+    @groups = Group.all
+
+    if params[:city].present?
+      @groups = @groups.where(city: params[:city])
+    end
+
+    if params[:date].present?
+      @walks = @walks.where(date: params[:date])
+    end
+
+    if params[:start_time].present?
+      @walks = @walks.where(start_time: params[:start_time])
+    end
+
+    if params[:address].present?
+      @walks = @walks.where(address: params[:address])
+    end
+
+  end
 end
