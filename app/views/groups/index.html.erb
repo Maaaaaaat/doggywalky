@@ -1,19 +1,24 @@
+<!-- app/views/groups/show.html.erb -->
 <div class="container">
   <div class="btn-div">
-    <%= link_to "Créer un groupe", "#", class: "button-form btn btn-link" %>
+    <%= link_to "Créer un groupe", new_profile_group_path(@profile), class: "button-form btn btn-link", style: "text-decoration:none;" %>
   </div>
 
-<% if @groups.any? %>
-  <% @groups.each do |group| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" alt="<%= group.name %>" />
-      <div class="card-product-infos">
-        <h2><%= group.name %></h2>
-        <p><%= group.description %></p>
-      </div>
+  <% if @groups.any? %>
+    <div class="card-container">
+      <% @groups.each do |group| %>
+        <%= link_to profile_group_path(@profile, group), class: "card-link" do %>
+          <div class="card-product">
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" alt="<%= group.name %>" />
+            <div class="card-product-infos">
+              <h2><%= group.name %></h2>
+              <p><%= group.description %></p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
+  <% else %>
+    <p>Vous n'appartenez à aucun groupe pour le moment.</p>
   <% end %>
-<% else %>
-  <p>Vous n'appartenez à aucun groupe pour le moment.</p>
-<% end %>
 </div>

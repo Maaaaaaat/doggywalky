@@ -14,11 +14,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(groups_params)
-    @group.profile = current_user
     if @group.save
-      redirect_to group_path(@group)
+      @group.profile_groups.create(profile: @profile)  # Association via ProfileGroup
+      redirect_to profile_group_path(@profile, @group), notice: 'Groupe créé avec succès.'
     else
-      render 'groups/new', status: :unprocessable_entity
+      render :new
     end
   end
 
@@ -29,6 +29,10 @@ class GroupsController < ApplicationController
   # end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:profile_id])
+  end
 
   def groups_params
     params.require(:group).permit(:name, :description, :city)

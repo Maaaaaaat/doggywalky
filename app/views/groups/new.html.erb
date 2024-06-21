@@ -1,1 +1,41 @@
-<h1>Ceci est la show de Groups</h1>
+
+<!-- app/views/groups/new.html.erb -->
+<div class="container">
+  <h2 class="mt-5">Créer un groupe</h2>
+
+  <%= simple_form_for([@profile, @group]) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name,
+                  label: "Nom du groupe",
+                  required: true,
+                  autofocus: true,
+                  label_html: { class: 'form-label-custom' },
+                  input_html: { class: 'custom-class' } %>
+      <%= f.input :city,
+                  label: "Ville",
+                  required: true,
+                  autofocus: true,
+                  label_html: { class: 'form-label-custom' },
+                  input_html: { class: 'custom-class' } %>
+      <%= f.input :description,
+                  label: "Description",
+                  as: :text,
+                  required: true,
+                  label_html: { class: 'form-label-custom' },
+                  input_html: { class: 'custom-class' } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Créer le groupe 🐶", class: "button-form" %>
+    </div>
+  <% end %>
+
+  <div class="mt-3">
+    <p class="mb-1">Vous voulez revenir en arrière?</p>
+    <div class="edit-btn">
+      <%= link_to "Retour", profile_groups_path(@profile), class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>
