@@ -15,6 +15,7 @@ Group.destroy_all
 Profile.destroy_all
 User.destroy_all
 
+
 puts "Creating users..."
 
 user1 = User.create!(
@@ -60,7 +61,41 @@ group3 = Group.create!(
   description:'A group for tech enthusiasts to share knowledge and network.',
 )
 
-puts "Finished!"
+puts "Creating Walks ..."
+
+walk2 = Walk.create!(
+  date: Date.today,
+  start_time: Time.now,
+  adress: "Bordeaux",
+  group_id: group2.id,
+  profile_id: profile1.id ,
+)
+
+walk3 = Walk.create!(
+  date: Date.today,
+  start_time: Time.now,
+  adress: "Marseille",
+  group_id: group2.id,
+  profile_id: profile1.id ,
+)
+
+walk4 = Walk.create!(
+  date: Date.today,
+  start_time: Time.now,
+  adress: "Lyon",
+  group_id: group2.id,
+  profile_id: profile1.id ,
+)
+
+walk5 = Walk.create!(
+  date: Date.today,
+  start_time: Time.now,
+  adress: "Lyon",
+  group_id: group2.id,
+  profile_id: profile1.id ,
+)
+
+puts "Finished"
 
 # pro_group = ProfileGroup.new
 # pro_group.profile = profile1
