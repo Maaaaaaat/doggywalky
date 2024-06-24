@@ -8,3 +8,11 @@
 .form-label-custom {
   color: #e36251;
 }
+
+.search-form-text {
+  color: #e36251 !important;
+}
+
+.search-form-text::-webkit-input-placeholder {
+  color: #e36251 !important;
+}
