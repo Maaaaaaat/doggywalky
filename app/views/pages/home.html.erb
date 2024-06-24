@@ -9,8 +9,9 @@
       <div class="card">
         <div class="card-body">
           <p class="mb-3">Ne tardez plus et rejoignez dès maintenant notre communauté :</p>
-          <%= link_to "Inscrivez-vous", new_user_registration_path, class: "btn btn-primary btn-signup mb-2" %>
-          <%= link_to "Se connecter", new_user_session_path, class: "btn btn-secondary" %>
+          <%= link_to "Inscrivez-vous", new_user_registration_path, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+          <p class="mb-3">Déja membre ?</p>
+          <%= link_to "Connectez-vous", new_user_session_path, class: "button-form btn btn-link", style: "text-decoration:none;" %>
         </div>
       </div>
     </div>
