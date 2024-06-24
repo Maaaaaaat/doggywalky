@@ -1,24 +1,26 @@
 <!-- app/views/shared/_navbar.html.erb -->
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-fixed-bottom">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+<% if user_signed_in? %>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-fixed-bottom">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
 
-    <!-- Div pour les icônes centrées horizontalement avec espace égal -->
-    <div class="d-flex justify-content-around align-items-center w-50">
-      <%= link_to root_path, class: "nav-link" do %>
-        <i class="fa-solid fa-house"></i>
-      <% end %>
-      <%= link_to search_path, class: "nav-link" do %>
-        <i class="fa-solid fa-magnifying-glass"></i> <!-- Icône de recherche -->
-      <% end %>
-      <% if @profile.present? %>
-        <%= link_to profile_groups_path(@profile), class: "nav-link" do %>
-          <i class="fas fa-users"></i> <!-- Icône de groupes -->
+    
+      <div class="d-flex justify-content-around align-items-center w-50">
+        <%= link_to root_path, class: "nav-link" do %>
+          <i class="fa-solid fa-house"></i>
         <% end %>
-      <% else %>
-        <%= link_to new_profile_path, class: "nav-link" do %>
-          <i class="fas fa-user-plus"></i> <!-- Icône de création de profil -->
+        <%= link_to search_path, class: "nav-link" do %>
+          <i class="fa-solid fa-magnifying-glass"></i> <!-- Icône de recherche -->
         <% end %>
-      <% end %>
+        <% if @profile.present? %>
+          <%= link_to profile_groups_path(@profile), class: "nav-link" do %>
+            <i class="fas fa-users"></i> <!-- Icône de groupes -->
+          <% end %>
+        <% else %>
+          <%= link_to new_profile_path, class: "nav-link" do %>
+            <i class="fas fa-user-plus"></i> <!-- Icône de création de profil -->
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
