@@ -23,5 +23,14 @@ Rails.application.routes.draw do
   resources :groups do
   get 'group_user', to: 'groups#group_user'
   end
+
+  resources :groups do
+    post 'join', to: 'groups#join'
+    end
+
+  resources :walks do
+    post 'join', to: 'walks#join'
+    end
+
 end
   # root "posts#index"

@@ -34,10 +34,47 @@ user2 = User.create!(
 puts "Creating profiles..."
 
 profile1 = Profile.create!(
-  username: 'johndoe',
-  city: 'New York',
-  gender: 'Male',
+  username: 'john',
+  city: 'Cannes',
+  gender: 'Homme',
   user_id: user1.id
+)
+
+profile2 = Profile.create!(
+  username: 'jane',
+  city: 'Marseille',
+  gender: 'Femme',
+  user_id: user2.id
+)
+
+puts "Creating dogs ..."
+
+dog1 = Dog.create!(
+  name: 'Bobbie',
+  breed: 'Chihuahua',
+  age: 6,
+  profile_id: profile1.id
+)
+
+dog2 = Dog.create!(
+  name: 'Samy',
+  breed: 'Bouldogue Français',
+  age: 3,
+  profile_id: profile1.id
+)
+
+dog3 = Dog.create!(
+  name: 'Lola',
+  breed: 'Labrador',
+  age: 7,
+  profile_id: profile2.id
+)
+
+dog4 = Dog.create!(
+  name: 'Carine',
+  breed: 'Teckel',
+  age: 10,
+  profile_id: profile2.id
 )
 
 puts "Creating groups..."
@@ -58,6 +95,18 @@ group3 = Group.create!(
   name: 'Tech Meetup',
   city: 'New York',
   description: 'A group for tech enthusiasts to share knowledge and network.',
+)
+
+group4 = Group.create!(
+  name: 'Labrador Ultra Fan',
+  city: 'Cannes',
+  description: 'Un groupe où on aime vraiment les labradors.',
+)
+
+group5 = Group.create!(
+  name: 'Chihuahua Super Star',
+  city: 'Mougins',
+  description: 'Si toi aussi tu aimes les chihuahuas, viens avec nous!',
 )
 
 puts "Creating ProfileGroups..."
