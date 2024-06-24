@@ -1,6 +1,6 @@
 # Pin npm packages by running ./bin/importmap
 
-pin "application"
+pin "application", preload: true
 pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@hotwired/stimulus", to: "stimulus.min.js"
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
@@ -25,3 +25,4 @@ pin "nanoid", to: "https://ga.jspm.io/npm:nanoid@3.3.7/index.browser.js"
 pin "subtag", to: "https://ga.jspm.io/npm:subtag@0.5.0/subtag.js"
 pin "suggestions", to: "https://ga.jspm.io/npm:suggestions@1.7.1/index.js"
 pin "xtend", to: "https://ga.jspm.io/npm:xtend@4.0.2/immutable.js"
+pin "city_forms"

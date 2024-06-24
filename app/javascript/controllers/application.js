@@ -10,7 +10,6 @@ export { application };
 
 // app/javascript/packs/application.js
 import "controllers";
-import "./city_forms";
 
 const ACCESS_TOKEN =
   "pk.eyJ1IjoidHVjYXNzZXNsZXNjb3VpbGxlcyIsImEiOiJjbHhraG51NzEwMWd0MmpzZG02aXQ4bjlkIn0.Rf-MR-RK_4Qi75WYkOINjg";
