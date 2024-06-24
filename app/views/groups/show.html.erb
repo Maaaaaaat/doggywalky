@@ -2,7 +2,7 @@
 
 <div class="button-group">
   <div class="button-group-category" >
-    <%= link_to 'Les sorties', group_walks_path(@group) %>
+    <%= link_to 'Les sorties à venir', group_walks_path(@group) %>
   </div>
 
   <div class="button-group-category" >
@@ -10,6 +10,12 @@
   </div>
 
   <div class="button-group-category" >
-    Les Membres
+    <%= link_to 'La liste des Membres', group_group_user_path(@group) %>
   </div>
 </div>
+
+  <div class="btn-div">
+    <% if !current_user.profile.groups.include?(@group) %>
+    <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+    <% end %>
+  </div>
