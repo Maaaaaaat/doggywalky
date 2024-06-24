@@ -9,9 +9,10 @@
   color: #e36251;
 }
 
-.custom-search-form {
-  border: 1px solid #b8b8b8;
-  background-color: #e7e5e5;
-  margin-top: 3px;
-  border-radius: 3px;
+.search-form-text {
+  color: #e36251 !important;
+}
+
+.search-form-text::-webkit-input-placeholder {
+  color: #e36251 !important;
 }
