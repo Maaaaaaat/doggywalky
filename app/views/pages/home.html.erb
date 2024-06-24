@@ -1,3 +1,18 @@
-<div id="home-page">
-  <div id="map" style="position: absolute; width: 100%; height: 100%"></div>
+<!-- app/views/pages/home.html.erb -->
+<div id="home-page" class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100">
+  <% if user_signed_in? %>
+    <div id="map" style="position: absolute; width: 100%; height: 100%"></div>
+  <% else %>
+    <div class="welcome-section text-center">
+      <h1 class="display-4 mb-4">Bienvenue sur DoggyWalky</h1>
+      <p class="lead mb-4">Rejoignez notre communauté pour des promenades inoubliables avec votre toutou préféré.</p>
+      <div class="card">
+        <div class="card-body">
+          <p class="mb-3">Ne tardez plus et rejoignez dès maintenant notre communauté :</p>
+          <%= link_to "Inscrivez-vous", new_user_registration_path, class: "btn btn-primary btn-signup mb-2" %>
+          <%= link_to "Se connecter", new_user_session_path, class: "btn btn-secondary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
