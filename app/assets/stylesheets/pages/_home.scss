@@ -1,10 +1,44 @@
-// Specific CSS for your home-page
-.page-container {
-  margin: 30px;
+/* app/assets/stylesheets/application.scss */
 
-
+/* Styles pour la page d'accueil */
+#home-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.action-container{
-margin: 15px;
+.welcome-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.welcome-section .card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section .btn {
+  width: 100%;
+}
+
+/* Pour s'assurer que la page est pleine hauteur sur mobile */
+.vh-100 {
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .welcome-section {
+    padding: 15px;
+  }
+
+  .welcome-section .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-section .lead {
+    font-size: 1.2rem;
+  }
 }
