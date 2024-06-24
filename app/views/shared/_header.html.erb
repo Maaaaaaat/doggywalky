@@ -6,7 +6,7 @@
       <%= image_tag "pp facebook.jpg", class: "avatar-bordered dropdown-toggle", alt: "avatar-bordered", id: "dropdownMenuButton", data: { bs_toggle: "dropdown", action: " click->dropdown#drop" }, 'aria-expanded': "false" %>
       <ul class="dropdown-menu d-none" aria-labelledby="dropdownMenuButton" data-dropdown-target="down">
         <li><%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item' %></li>
-        <li><%= link_to 'Mon profil', profile_path(current_user.profile), class: 'dropdown-item' %></li>
+        <li><%= link_to 'Mon profil', edit_profile_path(current_user.profile), class: 'dropdown-item' %></li>
         <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></li>
 
       </ul>

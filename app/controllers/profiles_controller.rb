@@ -19,7 +19,14 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
   def update
+    @profile = Profile.find(params[:id])
+    @profile.update(profile_params)
+    # redirect_to restaurant_path(@restaurant)
   end
 
   def delete
