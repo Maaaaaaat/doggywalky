@@ -56,6 +56,8 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem 'ffi', '< 1.17.0'
 gem 'turbolinks', '~> 5'
+gem "cloudinary"
+
 
 group :development, :test do
   gem "dotenv-rails"
