@@ -7,9 +7,7 @@
   color: #f1e5d1 !important;
 }
 
-
-
-.button-group{
+.button-group {
   display: flex;
   justify-content: space-between;
   margin-top: 10%;
@@ -17,7 +15,7 @@
   margin-right: 10px;
 }
 
-.button-group-category{
+.button-group-category {
   background-color: seashell;
   display: flex;
   align-items: center;
@@ -27,4 +25,9 @@
   border-style: groove;
   border-color: #e36251;
   border-radius: 5%;
+}
+
+.button-form-search {
+  border-width: 0px !important;
+  padding: 0.375rem 0.75rem;
 }

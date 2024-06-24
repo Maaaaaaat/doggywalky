@@ -3,21 +3,21 @@
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon navbar-fixed-bottom">
     <div class="container-fluid d-flex justify-content-between align-items-center">
 
-    
+
       <div class="d-flex justify-content-around align-items-center w-50">
         <%= link_to root_path, class: "nav-link" do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
-        <%= link_to search_path, class: "nav-link" do %>
-          <i class="fa-solid fa-magnifying-glass"></i> <!-- Icône de recherche -->
+        <%= link_to search_path(homepage: true), class: "nav-link" do %>
+          <i class="fa-solid fa-magnifying-glass"></i> 
         <% end %>
         <% if @profile.present? %>
           <%= link_to profile_groups_path(@profile), class: "nav-link" do %>
-            <i class="fas fa-users"></i> <!-- Icône de groupes -->
+            <i class="fas fa-users"></i>
           <% end %>
         <% else %>
           <%= link_to new_profile_path, class: "nav-link" do %>
-            <i class="fas fa-user-plus"></i> <!-- Icône de création de profil -->
+            <i class="fas fa-user-plus"></i>
           <% end %>
         <% end %>
       </div>

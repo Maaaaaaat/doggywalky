@@ -3,36 +3,44 @@
 
   <%= form_with url: search_path, method: :get, class: "d-flex flex-column" do |f| %>
     <div class="form-group">
-      <%= f.date_field :date, class: "form-control", placeholder: "Date", autocomplete: "off" %>
+      <%= f.date_field :date, class: "form-control custom-class mb-2 search-form-text", placeholder: "Date", autocomplete: "off" %>
     </div>
     <div class="form-group">
-      <%= f.time_field :start_time, class: "form-control", placeholder: "Heure de début", autocomplete: "off" %>
+      <%= f.time_field :start_time, class: "form-control custom-class mb-2 search-form-text", placeholder: "Heure de début", autocomplete: "off" %>
     </div>
     <div class="form-group">
-      <%= f.text_field :adress, class: "form-control", placeholder: "Adresse de la promenade", autocomplete: "off" %>
+      <%= f.text_field :adress, class: "form-control custom-class mb-1 search-form-text", placeholder: "Adresse de la promenade", autocomplete: "off" %>
     </div>
-    <%= f.submit "Rechercher", class: "btn btn-primary mt-2" %>
+      <div class="form-actions">
+    <%= f.submit "Rechercher 🐶", class: "button-form button-form-search mt-2 mb-2" %>
+    </div>
   <% end %>
 
-  <% if @groups.any? %>
-    <h3>Groupes et Promenades</h3>
-    <div class="cards">
-      <% @groups.each do |group| %>
-        <div class="card mb-3">
-          <h4><%= group.name %></h4>
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"  width="200px"/>
-          <div>
-            <% group.walks.where(id: @walks.pluck(:id)).each do |walk| %>
-              <p><strong>Date:</strong> <%= walk.date %></p>
-              <p><strong>Heure de début:</strong> <%= walk.start_time %></p>
-              <p><strong>Adresse:</strong> <%= walk.adress %></p>
-              <!-- Ajoutez d'autres informations pertinentes pour Walk ici -->
-            <% end %>
-          </div>
+  <% filtered_groups = @groups.select { |group| group.walks.where(id: @walks.pluck(:id)).any? } %>
+
+<% if filtered_groups.any? %>
+  <h3 class="mb-2">Groupes et Promenades</h3>
+  <div class="cards">
+    <% filtered_groups.each do |group| %>
+      <div class="card mb-3">
+        <h4><%= group.name %></h4>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"  width="200"/>
+        <div>
+          <% group.walks.where(id: @walks.pluck(:id)).each do |walk| %>
+            <p><strong>Date:</strong> <%= walk.date %></p>
+            <p><strong>Heure de début:</strong> <%= walk.start_time %></p>
+            <p><strong>Adresse:</strong> <%= walk.adress %></p>
+            <!-- Ajoutez d'autres informations pertinentes pour Walk ici -->
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  <% else %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <% if params[:homepage].present? %>
+    <p class="mt-2">Vous n'avez pas encore effectué de recherche 😜</p>
+  <%else%>
     <p>Aucun résultat trouvé correspondant à votre recherche.</p>
   <% end %>
+<% end %>
 </div>
