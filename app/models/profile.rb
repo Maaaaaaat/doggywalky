@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+  GENDER = %w(femme homme autre)
   belongs_to :user
   has_many :dogs
   has_many :profile_groups

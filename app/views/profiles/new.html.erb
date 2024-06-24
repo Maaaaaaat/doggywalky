@@ -15,6 +15,7 @@
                 label: "Genre",
                 required: true,
                 autofocus: true,
+                collection: Profile::GENDER,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "gender", class: 'custom-class' }%>
     <%= f.input :city,

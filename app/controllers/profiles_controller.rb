@@ -26,7 +26,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find(params[:id])
     @profile.update(profile_params)
-    # redirect_to restaurant_path(@restaurant)
+    redirect_to root_path
   end
 
   def delete
