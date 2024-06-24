@@ -57,6 +57,8 @@ gem "sassc-rails"
 gem 'ffi', '< 1.17.0'
 gem 'turbolinks', '~> 5'
 
+
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
