@@ -27,9 +27,11 @@ class PagesController < ApplicationController
       @walks = @walks.where('adress ILIKE ?', "%#{params[:adress]}%")
     end
 
-
-    @groups = Group.joins(:walks).where(walks: { id: @walks.pluck(:id) }).distinct
-
+    if params[:homepage].present?
+      @groups = []
+    else
+      @groups = Group.joins(:walks).where(walks: { id: @walks.pluck(:id) }).distinct
+    end
     @walks = [] if params.except(:controller, :action).empty?
   end
 
