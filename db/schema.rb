@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_19_101847) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_24_133334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,6 +44,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_101847) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_profile_groups_on_group_id"
     t.index ["profile_id"], name: "index_profile_groups_on_profile_id"
+  end
+
+  create_table "profile_walks", force: :cascade do |t|
+    t.bigint "walk_id", null: false
+    t.bigint "profile_id", null: false
+    t.index ["profile_id"], name: "index_profile_walks_on_profile_id"
+    t.index ["walk_id"], name: "index_profile_walks_on_walk_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -86,6 +93,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_19_101847) do
   add_foreign_key "dogs", "profiles"
   add_foreign_key "profile_groups", "groups"
   add_foreign_key "profile_groups", "profiles"
+  add_foreign_key "profile_walks", "profiles"
+  add_foreign_key "profile_walks", "walks"
   add_foreign_key "profiles", "users"
   add_foreign_key "walks", "groups"
   add_foreign_key "walks", "profiles"

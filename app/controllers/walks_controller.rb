@@ -28,6 +28,11 @@ class WalksController < ApplicationController
   end
 
   def join
+    @profile_walk = ProfileWalk.new
+    @profile_walk.profile = current_user.profile
+    @profile_walk.walk = Walk.find([:walk_id])
+    @profile_walk.save!
+    redirect_to group_walks_path(@profile, @walk)
   end
 
   def update
