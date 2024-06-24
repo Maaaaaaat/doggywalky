@@ -37,6 +37,10 @@
     <% end %>
   </div>
 <% else %>
-  <p>Aucun résultat trouvé correspondant à votre recherche.</p>
+  <% if params[:homepage].present? %>
+    <p class="mt-2">Vous n'avez pas encore effectué de recherche 😜</p>
+  <%else%>
+    <p>Aucun résultat trouvé correspondant à votre recherche.</p>
+  <% end %>
 <% end %>
 </div>
