@@ -2,14 +2,19 @@
 <div class="header-container">
   <div class="header fixed-top">
     <% if user_signed_in? %>
-      <div class="dropdown">
-        <%= image_tag "pp facebook.jpg", class: "avatar-bordered dropdown-toggle", alt: "avatar-bordered", id: "dropdownMenuButton", data: { bs_toggle: "dropdown" }, 'aria-expanded': "false" %>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item' %></li>
-          <li><%= link_to 'Mon profil', profile_path(current_user.profile), class: 'dropdown-item' %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %></li>
-        </ul>
-      </div>
+    <div class="dropdown" data-controller="dropdown">
+      <%= image_tag "pp facebook.jpg", class: "avatar-bordered dropdown-toggle", alt: "avatar-bordered", id: "dropdownMenuButton", data: { bs_toggle: "dropdown", action: " click->dropdown#drop" }, 'aria-expanded': "false" %>
+      <ul class="dropdown-menu d-none" aria-labelledby="dropdownMenuButton" data-dropdown-target="down">
+        <li><%= link_to 'Mon compte', edit_user_registration_path, class: 'dropdown-item' %></li>
+        <% if current_user.profile.present? %>
+          <li><%= link_to 'Mon profil', edit_profile_path(current_user.profile), class: 'dropdown-item' %></li>
+          <% else %>
+          <li><%= link_to 'Créer un profil', new_profile_path %></li>
+        <% end %>
+        <li><%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %></li>
+
+      </ul>
+    </div>
     <% else %>
       <%= image_tag "avatar2.png", class: "avatar-bordered", alt: "avatar-bordered" %>
     <% end %>

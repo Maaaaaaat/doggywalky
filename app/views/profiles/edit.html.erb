@@ -1,33 +1,39 @@
 <div class="container">
-<h2 class="mt-5">Créer un profil</h2>
+<h2 class="mt-5">Editer un profil</h2>
 
-<%= simple_form_for(@profilenew) do |f| %>
+<%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :username,
                 label: "Nom d'utilisateur",
-                required: true,
+                required: false,
                 autofocus: true,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "username", class: 'custom-class' } %>
     <%= f.input :gender,
                 label: "Genre",
-                required: true,
+                required: false,
                 autofocus: true,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "gender", class: 'custom-class' }%>
     <%= f.input :city,
                 label: "Ville",
-                required: true,
+                required: false,
                 autofocus: true,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "email", class: 'custom-class' }%>
     <%= f.input :street,
                 label: "Rue à proximité pour trouver des groupes",
-                required: true,
+                required: false,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "street", class: 'custom-class' } %>
+                 <%= f.input :current_password,
+                hint: "Rentrez votre mot de passe pour confirmer",
+                required: true,
+                label: "Mot de passe",
+                label_html: { class: 'form-label-custom' },
+                input_html: { autocomplete: "current-password", class: 'custom-class' } %>
   </div>
 
   <div class="form-actions">
