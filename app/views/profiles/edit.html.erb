@@ -15,6 +15,7 @@
                 label: "Genre",
                 required: false,
                 autofocus: true,
+                collection: Profile::GENDER,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "gender", class: 'custom-class' }%>
     <%= f.input :city,
@@ -33,7 +34,7 @@
                 required: true,
                 label: "Mot de passe",
                 label_html: { class: 'form-label-custom' },
-                input_html: { autocomplete: "current-password", class: 'custom-class' } %>
+                input_html: { class: 'custom-class' } %>
   </div>
 
   <div class="form-actions">
