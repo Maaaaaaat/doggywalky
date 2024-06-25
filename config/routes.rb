@@ -10,15 +10,19 @@ Rails.application.routes.draw do
   get 'search', to: 'pages#search'
 
   # Defines the root path route ("/")
-  resources :profiles, only: [:show, :new, :create, :edit, :update] do
+  resources :profiles, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :groups, only: [:index, :new, :create, :show]
   end
 
   resources :groups, only: [:delete, :update] do
-    resources :walks, only: [:new, :show, :index, :create]
+    resources :walks, only: [:new, :show, :index, :create, :destroy]
   end
 
   resources :walks, only: [:delete, :edit, :update]
+
+  resources :groups do
+    get 'search', to: 'pages#search'
+  end
 
   resources :groups do
   get 'group_user', to: 'groups#group_user'
@@ -31,6 +35,10 @@ Rails.application.routes.draw do
   resources :walks do
     post 'join', to: 'walks#join'
     end
+
+    resources :profile_groups do
+      delete 'quit', to: 'groups#quit'
+  end
 
 end
   # root "posts#index"

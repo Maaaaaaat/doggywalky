@@ -1,9 +1,18 @@
 <!-- app/views/pages/home.html.erb -->
 <div id="home-page" class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100">
   <% if user_signed_in? %>
-    <div id="map" style="position: absolute; width: 100%; height: 100%"></div>
+       <div class="map-container" data-controller="mapbox">
+      <div id="map" data-mapbox-target="map"></div>
+      <% @groups.each do |group| %>
+      <div class="d-none" id="marker" data-mapbox-target="marker"
+                          data-longitude-value="<%= group.longitude %>"
+                          data-latitude-value="<%= group.latitude %>"
+                          data-action="click->mapbox#group">
+      /</div>
+      <% end %>
+    </div>
   <% else %>
-     <%= image_tag "logo DW.png", class: "logo-homepage" %>
+     <%= cl_image_tag("gswwrspw7pzprdl3iqii", class: "logo-homepage") %>
     <div class="welcome-section text-center">
       <h1 class="display-4 mb-4">Bienvenue sur DoggyWalky</h1>
       <p class="lead mb-4">Rejoignez notre communauté pour des promenades inoubliables avec votre toutou préféré.</p>
@@ -18,3 +27,27 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  const ACCESS_TOKEN = 'pk.eyJ1IjoidHVjYXNzZXNsZXNjb3VpbGxlcyIsImEiOiJjbHhraG51NzEwMWd0MmpzZG02aXQ4bjlkIn0.Rf-MR-RK_4Qi75WYkOINjg';
+
+mapboxgl.accessToken = ACCESS_TOKEN;
+const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [-73.99209, 40.68933],
+    zoom: 12
+});
+
+const searchJS = document.getElementById('search-js');
+searchJS.onload = function () {
+    const geocoder = new MapboxGeocoder();
+    geocoder.accessToken = ACCESS_TOKEN;
+    geocoder.options = {
+        proximity: [-73.99209, 40.68933]
+    };
+    geocoder.marker = true;
+    geocoder.mapboxgl = mapboxgl;
+    map.addControl(geocoder);
+  }
+</script>
