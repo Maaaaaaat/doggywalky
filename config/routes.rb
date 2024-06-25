@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   get 'search', to: 'pages#search'
 
   # Defines the root path route ("/")
-  resources :profiles, only: [:show, :new, :create, :edit, :update] do
+  resources :profiles, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :groups, only: [:index, :new, :create, :show]
   end
 
   resources :groups, only: [:delete, :update] do
-    resources :walks, only: [:new, :show, :index, :create]
+    resources :walks, only: [:new, :show, :index, :create, :destroy]
   end
 
   resources :walks, only: [:delete, :edit, :update]
