@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :groups, only: [:delete, :update] do
-    resources :walks, only: [:new, :show, :index, :create, :destroy]
+    resources :walks, only: [:new, :show, :index, :create]
   end
 
   resources :walks, only: [:delete, :edit, :update]

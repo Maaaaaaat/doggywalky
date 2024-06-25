@@ -1,6 +1,6 @@
 class WalksController < ApplicationController
   before_action :set_group
-  before_action :set_walk, only: [:show, :edit, :update, :destroy]
+  before_action :set_walk, only: [:show, :edit, :update]
 
   def index
     @group = Group.find(params[:group_id])
