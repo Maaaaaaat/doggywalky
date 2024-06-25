@@ -40,6 +40,12 @@
   <div class="form-actions">
     <%= f.button :submit, "Valider 🐶", class: "button-form" %>
   </div>
+
+<%= link_to "Supprimer le profil",
+  profile_path(@profile),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+  class: "btn btn-danger"
+%>
 <% end %>
 <div class=" mt-3">
 <p class="mb-1">

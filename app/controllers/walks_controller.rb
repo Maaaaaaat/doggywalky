@@ -1,5 +1,6 @@
 class WalksController < ApplicationController
   before_action :set_group
+  before_action :set_walk, only: [:show, :edit, :update, :destroy]
 
   def index
     @group = Group.find(params[:group_id])
@@ -35,7 +36,13 @@ class WalksController < ApplicationController
     redirect_to group_walks_path(@profile, @walk)
   end
 
+  def edit
+  end
+
   def update
+  end
+
+  def delete
   end
 
 
@@ -43,6 +50,10 @@ class WalksController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_walk
+    @walk = @group.walks.find(params[:id])
   end
 
   def walk_params
