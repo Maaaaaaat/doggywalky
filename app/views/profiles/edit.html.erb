@@ -23,7 +23,7 @@
                 required: false,
                 autofocus: true,
                 label_html: { class: 'form-label-custom' },
-                input_html: { autocomplete: "email", class: 'custom-class' }%>
+                input_html: { autocomplete: "off", class: 'custom-class', id: 'city-input', list: 'city-suggestions' }%>
     <%= f.input :street,
                 label: "Rue à proximité pour trouver des groupes",
                 required: false,
