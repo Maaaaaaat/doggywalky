@@ -42,11 +42,6 @@
     <%= f.button :submit, "Valider 🐶", class: "button-form" %>
   </div>
 
-<%= link_to "Supprimer le profil",
-  profile_path(@profile),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-  class: "btn btn-danger"
-%>
 <% end %>
 <div class=" mt-3">
 <p class="mb-1">
@@ -55,5 +50,6 @@ Vous voulez revenir en arrière?
 <div class="edit-btn">
 <%= link_to "Editer le compte", edit_user_registration_path(@user) %>
 </div>
+<%= link_to "Supprimer le profil", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "pt-3" %>
 </div>
 </div>
