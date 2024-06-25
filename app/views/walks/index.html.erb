@@ -10,11 +10,11 @@
           <p><%= walk.start_time %></p>
           <p><%= walk.adress %></p>
 
-          <div class="btn-div">
-            <% if !current_user.profile.profile_walks.include?(walk) %>
-            <%= link_to "Rejoins la sortie 🐶", walk_join_path(walk), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
-            <% end %>
-          </div>
+        <div class="btn-div">
+          <% if !current_user.profile.walks.include?(@walk) %>
+          <%= link_to "Rejoins la sortie 🐶", walk_join_path(@walks), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+          <% end %>
+        </div>
         </div>
   </div>
       <% end %>

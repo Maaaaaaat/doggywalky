@@ -9,7 +9,6 @@
 #   end
 
 Dog.destroy_all
-ProfileWalk.destroy_all
 Walk.destroy_all
 ProfileGroup.destroy_all
 Group.destroy_all
@@ -149,9 +148,5 @@ walk5 = Walk.create!(
   group_id: group2.id,
   profile_id: profile1.id,
 )
-
-puts "Creating ProfileWalks..."
-
-
 
 puts "Finished"
