@@ -1,7 +1,16 @@
 <!-- app/views/pages/home.html.erb -->
 <div id="home-page" class="container-fluid d-flex flex-column align-items-center justify-content-center vh-100">
   <% if user_signed_in? %>
-    <div id="map" style="position: absolute; width: 100%; height: 100%"></div>
+       <div class="map-container" data-controller="mapbox">
+      <div id="map" data-mapbox-target="map"></div>
+      <% @groups.each do |group| %>
+      <div class="d-none" id="marker" data-mapbox-target="marker"
+                          data-longitude-value="<%= group.longitude %>"
+                          data-latitude-value="<%= group.latitude %>"
+                          data-action="click->mapbox#group">
+      /</div>
+      <% end %>
+    </div>
   <% else %>
      <%= cl_image_tag("gswwrspw7pzprdl3iqii", class: "logo-homepage") %>
     <div class="welcome-section text-center">
