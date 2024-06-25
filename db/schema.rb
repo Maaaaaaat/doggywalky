@@ -32,9 +32,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_24_133334) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "street"
     t.float "latitude"
     t.float "longitude"
-    t.string "street"
   end
 
   create_table "profile_groups", force: :cascade do |t|
