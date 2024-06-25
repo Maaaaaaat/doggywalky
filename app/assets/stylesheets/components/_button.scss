@@ -15,19 +15,45 @@
   margin-right: 10px;
 }
 
-.button-group-category {
-  background-color: seashell;
+.button-group-category-showgr {
+  background-color: rgb(252, 251, 251);
   display: flex;
   align-items: center;
   justify-content: center;
   width: 110px;
   height: 80px;
   border-style: groove;
-  border-color: #e36251;
-  border-radius: 5%;
+  border-radius: 8%;
+  box-shadow: 8px 8px 5px -7px rgba(0, 0, 0, 0.13);
+  padding: 10px;
+  position: relative;
 }
 
-.button-form-search {
-  border-width: 0px !important;
-  padding: 0.375rem 0.75rem;
+.card-link {
+  text-decoration: none;
+  color: inherit; /* Utilisez inherit pour hériter de la couleur du parent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1; /* Pour s'assurer que le lien couvre tout */
+}
+
+.card-content {
+  padding: 15%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.button-group-category-showgr .card-link:hover {
+  background-color: rgba(0, 0, 0, 0.05); /* Ajoute un léger changement de couleur au survol */
 }

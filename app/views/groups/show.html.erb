@@ -1,21 +1,27 @@
 <h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="button-group">
-  <div class="button-group-category" >
-    <%= link_to 'Les sorties à venir', group_walks_path(@group) %>
+  <div class="button-group-category-showgr">
+    <%= link_to group_walks_path(@group), class: 'card-link' do %>
+      <div class="card-content">Les sorties à venir</div>
+    <% end %>
   </div>
 
-  <div class="button-group-category" >
-    <%= link_to 'Crée ta Sortie', new_group_walk_path(@group) %>
+  <div class="button-group-category-showgr">
+    <%= link_to new_group_walk_path(@group), class: 'card-link' do %>
+      <div class="card-content">Crée ta Sortie</div>
+    <% end %>
   </div>
 
-  <div class="button-group-category" >
-    <%= link_to 'La liste des Membres', group_group_user_path(@group) %>
+  <div class="button-group-category-showgr">
+    <%= link_to group_group_user_path(@group), class: 'card-link' do %>
+      <div class="card-content">La liste des Membres</div>
+    <% end %>
   </div>
 </div>
 
-  <div class="btn-div">
-    <% if !current_user.profile.groups.include?(@group) %>
-    <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
-    <% end %>
-  </div>
+<div class="btn-div">
+  <% if !current_user.profile.groups.include?(@group) %>
+    <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: { turbo_method: :post }, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+  <% end %>
+</div>
