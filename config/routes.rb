@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   resources :walks, only: [:delete, :edit, :update]
 
+  resources :groups
+  get 'search', to: 'pages#search'
+
   resources :groups do
   get 'group_user', to: 'groups#group_user'
   end
