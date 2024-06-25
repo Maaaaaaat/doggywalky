@@ -9,7 +9,7 @@
         <% if current_user.profile.present? %>
           <li><%= link_to 'Mon profil', edit_profile_path(current_user.profile), class: 'dropdown-item' %></li>
           <% else %>
-          <li><%= link_to 'Créer un profil', new_profile_path %></li>
+          <li><%= link_to 'Créer un profil', new_profile_path, class: 'dropdown-item' %></li>
         <% end %>
         <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item logout-link" %></li>
 
