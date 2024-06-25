@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   resources :walks, only: [:delete, :edit, :update]
 
   resources :groups do
+    get 'search', to: 'pages#search'
+  end
+
+  resources :groups do
   get 'group_user', to: 'groups#group_user'
   end
 
@@ -31,6 +35,10 @@ Rails.application.routes.draw do
   resources :walks do
     post 'join', to: 'walks#join'
     end
+
+    resources :profile_groups do
+      delete 'quit', to: 'groups#quit'
+  end
 
 end
   # root "posts#index"

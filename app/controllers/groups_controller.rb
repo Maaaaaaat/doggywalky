@@ -32,9 +32,16 @@ class GroupsController < ApplicationController
     @profile_group.profile = current_user.profile
     @profile_group.group = Group.find(params[:group_id])
     @profile_group.save!
-    redirect_to profile_group_path(@profile, @group), notice: 'Tu as rejoint le groupe avec succès.'
+    redirect_to profile_groups_path(@profile)
   end
 
+
+  def quit
+    @profile = current_user.profile
+    @group = Group.find(params[:profile_group_id])
+    @profile.groups.delete(@group)
+    redirect_to profile_groups_path(@profile)
+  end
   # def destroy
   #   @group = Group.find(params[:id])
   #   @group.destroy
