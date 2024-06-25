@@ -20,16 +20,8 @@
   </div>
 </div>
 
-
-   <% if !current_user.profile.groups.include?(@group) %>
-  <div class="btn-div">
-    <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
-  </div>
-   <% end %>
-
-   <% if current_user.profile.groups.include?(@group) %>
-    <div class="btn-div">
-    <%= link_to "Quitter le groupe 🐶", profile_group_quit_path(@group), data: {turbo_method: :delete}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
-  </div>
-    <% end %>
-
+<div class="btn-div">
+  <% if !current_user.profile.groups.include?(@group) %>
+    <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: { turbo_method: :post }, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+  <% end %>
+</div>
