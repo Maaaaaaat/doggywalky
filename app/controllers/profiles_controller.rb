@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   def index
   end
 
@@ -29,7 +30,10 @@ class ProfilesController < ApplicationController
     redirect_to root_path
   end
 
-  def delete
+  def destroy
+    @profile = Profile.find(params[:id])
+    @profile.destroy
+    redirect_to root_path, notice: 'Profil supprimé avec succès.'
   end
 
   private
