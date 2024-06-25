@@ -14,7 +14,6 @@ class PagesController < ApplicationController
 
     def search
     @walks = Walk.all
-
     if params[:date].present?
       @walks = @walks.where(date: params[:date])
     end
