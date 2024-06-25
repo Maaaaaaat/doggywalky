@@ -2,14 +2,13 @@ import { Application } from "@hotwired/stimulus";
 
 const application = Application.start();
 
-// Configure Stimulus development experience
 application.debug = false;
 window.Stimulus = application;
 
 export { application };
 
-// app/javascript/packs/application.js
 import "controllers";
+import "../city_forms";
 
 const ACCESS_TOKEN =
   "pk.eyJ1IjoidHVjYXNzZXNsZXNjb3VpbGxlcyIsImEiOiJjbHhraG51NzEwMWd0MmpzZG02aXQ4bjlkIn0.Rf-MR-RK_4Qi75WYkOINjg";
@@ -51,7 +50,6 @@ document.addEventListener("turbo:load", () => {
     return new bootstrap.Dropdown(dropdownToggleEl);
   });
 
-  // Confirmation de déconnexion
   const logoutLinks = document.querySelectorAll(".logout-link");
   logoutLinks.forEach((link) => {
     link.addEventListener("click", function (event) {
