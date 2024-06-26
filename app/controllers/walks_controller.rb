@@ -1,6 +1,6 @@
 class WalksController < ApplicationController
   before_action :set_group
-  before_action :set_walk, only: [:show, :edit, :update]
+  before_action :set_walk, only: [:show, :edit, :update, :delete]
 
   def index
     @group = Group.find(params[:group_id])
@@ -43,7 +43,7 @@ class WalksController < ApplicationController
   def update
   end
 
-  def delete
+  def destroy
   end
 
 

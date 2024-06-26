@@ -119,7 +119,7 @@ puts "Creating Walks..."
 
 walk2 = Walk.create!(
   date: Date.today,
-  start_time: Time.current,
+  start_time: Time.now,
   adress: "25 avenue de la Gare",
   group_id: group2.id,
   profile_id: profile1.id,
