@@ -44,5 +44,6 @@ Rails.application.routes.draw do
   # authenticate :user, ->(user) do
   #   mount Sidekiq::Web => '/sidekiq'
   # end
-  end
+
+end
   # root "posts#index"
