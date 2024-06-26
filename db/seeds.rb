@@ -80,21 +80,21 @@ dog4 = Dog.create!(
 puts "Creating groups..."
 
 group1 = Group.create!(
-  name: 'Hiking Enthusiasts',
-  city: 'New York',
-  description: 'A group for people who love hiking.'
+  name: 'Balades à minuit',
+  city: 'Monaco',
+  description: 'On se balade.'
 )
 
 group2 = Group.create!(
-  name: 'Book Club',
-  city: 'New York',
-  description: 'A group for book lovers to discuss literature.',
+  name: 'Toutou Club',
+  city: 'Nice',
+  description: 'A group for toutou lovers.',
 )
 
 group3 = Group.create!(
-  name: 'Tech Meetup',
-  city: 'New York',
-  description: 'A group for tech enthusiasts to share knowledge and network.',
+  name: 'Corgis only',
+  city: 'Valbonne',
+  description: 'Seulement des corgis.',
 )
 
 group4 = Group.create!(
@@ -120,7 +120,7 @@ puts "Creating Walks..."
 walk2 = Walk.create!(
   date: Date.today,
   start_time: Time.now,
-  adress: "Bordeaux",
+  adress: "25 avenue de la Gare",
   group_id: group2.id,
   profile_id: profile1.id,
 )
@@ -128,7 +128,7 @@ walk2 = Walk.create!(
 walk3 = Walk.create!(
   date: Date.today,
   start_time: Time.now,
-  adress: "Marseille",
+  adress: "20 avenue de france",
   group_id: group2.id,
   profile_id: profile1.id,
 )
@@ -136,7 +136,7 @@ walk3 = Walk.create!(
 walk4 = Walk.create!(
   date: Date.today,
   start_time: Time.now,
-  adress: "Lyon",
+  adress: "12 boulevard du marché",
   group_id: group2.id,
   profile_id: profile1.id,
 )
@@ -144,7 +144,7 @@ walk4 = Walk.create!(
 walk5 = Walk.create!(
   date: Date.today,
   start_time: Time.now,
-  adress: "Lyon",
+  adress: "3 rue de france",
   group_id: group2.id,
   profile_id: profile1.id,
 )

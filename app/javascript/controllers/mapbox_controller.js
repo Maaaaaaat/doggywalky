@@ -24,7 +24,7 @@ export default class extends Controller {
       mapboxgl: mapboxgl,
       marker: true,
       placeholder: "Recherche",
-      country: "fr",
+      country: "fr",g
       language: "fr",
       types: "place"
     }), "top-right");
