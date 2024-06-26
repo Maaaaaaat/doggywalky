@@ -119,7 +119,7 @@ puts "Creating Walks..."
 
 walk2 = Walk.create!(
   date: Date.today,
-  start_time: Time.now,
+  start_time: Time.current,
   adress: "25 avenue de la Gare",
   group_id: group2.id,
   profile_id: profile1.id,
@@ -127,7 +127,7 @@ walk2 = Walk.create!(
 
 walk3 = Walk.create!(
   date: Date.today,
-  start_time: Time.now,
+  start_time: Time.current,
   adress: "20 avenue de france",
   group_id: group2.id,
   profile_id: profile1.id,
@@ -135,7 +135,7 @@ walk3 = Walk.create!(
 
 walk4 = Walk.create!(
   date: Date.today,
-  start_time: Time.now,
+  start_time: Time.current,
   adress: "12 boulevard du marché",
   group_id: group2.id,
   profile_id: profile1.id,
@@ -143,7 +143,7 @@ walk4 = Walk.create!(
 
 walk5 = Walk.create!(
   date: Date.today,
-  start_time: Time.now,
+  start_time: Time.current,
   adress: "3 rue de france",
   group_id: group2.id,
   profile_id: profile1.id,
