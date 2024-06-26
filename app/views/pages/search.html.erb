@@ -32,11 +32,12 @@
             <p><strong>Adresse:</strong> <%= walk.adress %></p>
             <!-- Ajoutez d'autres informations pertinentes pour Walk ici -->
           <% end %>
-        </div>
-        <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), class: "button-form btn btn-link", style: "text-decoration:none;" %>
-      </div>
+       <div class="btn-div">
+    <%= link_to "Voir le groupe 🐶", profile_group_path(@profile, group), class: "button-form btn btn-link", style: "text-decoration:none;" %>
+  </div>
     <% end %>
   </div>
+
 <% else %>
   <% if params[:homepage].present? %>
     <p class="mt-2">Vous n'avez pas encore effectué de recherche 😜</p>
