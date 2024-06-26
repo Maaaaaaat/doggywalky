@@ -18,13 +18,15 @@
                 collection: Profile::GENDER,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "gender", class: 'custom-class' }%>
-    <%= f.input :city,
-                label: "Ville",
-                required: false,
-                autofocus: true,
-                label_html: { class: 'form-label-custom' },
-                input_html: { autocomplete: "off", class: 'custom-class', id: 'city-input', list: 'city-suggestions' } %>
-                <datalist id="city-suggestions"></datalist>
+     <div data-controller="autocomplete" data-action="input->autocomplete#updateSuggestions">
+        <%= f.input :city,
+                    label: "Ville",
+                    required: false,
+                    autofocus: true,
+                    label_html: { class: 'form-label-custom' },
+                    input_html: { autocomplete: "off", class: 'custom-class', 'data-autocomplete-target': 'input' } %>
+        <div id="city-suggestions" data-autocomplete-target="suggestions" class="custom-suggestions-list"></div>
+      </div>
     <%= f.input :street,
                 label: "Rue à proximité pour trouver des groupes",
                 required: false,

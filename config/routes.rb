@@ -40,9 +40,9 @@ Rails.application.routes.draw do
       delete 'quit', to: 'groups#quit'
   end
 
-  require "sidekiq/web"
-  authenticate :user, ->(user) do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  # require "sidekiq/web"
+  # authenticate :user, ->(user) do
+  #   mount Sidekiq::Web => '/sidekiq'
+  # end
   end
   # root "posts#index"
