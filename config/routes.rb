@@ -40,5 +40,9 @@ Rails.application.routes.draw do
       delete 'quit', to: 'groups#quit'
   end
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
 end
   # root "posts#index"

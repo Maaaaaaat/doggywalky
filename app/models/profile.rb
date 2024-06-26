@@ -6,4 +6,5 @@ class Profile < ApplicationRecord
   has_many :walks
   has_many :groups, through: :profile_groups
   has_many :profile_walks
+  has_many :messages
 end
