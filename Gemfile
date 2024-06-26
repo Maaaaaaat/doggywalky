@@ -60,6 +60,7 @@ gem "sassc-rails"
 gem 'ffi', '< 1.17.0'
 gem 'turbolinks', '~> 5'
 gem "cloudinary"
+gem "redis", ">= 4.0.1"
 
 
 
