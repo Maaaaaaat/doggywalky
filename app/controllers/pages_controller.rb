@@ -13,6 +13,7 @@ class PagesController < ApplicationController
   end
 
     def search
+    @profile = current_user.profile
     @walks = Walk.all
 
     if params[:date].present?
@@ -33,6 +34,5 @@ class PagesController < ApplicationController
       @groups = Group.joins(:walks).where(walks: { id: @walks.pluck(:id) }).distinct
     end
     @walks = [] if params.except(:controller, :action).empty?
-  end
-
+    end
 end

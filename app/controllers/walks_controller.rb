@@ -1,6 +1,7 @@
 class WalksController < ApplicationController
   before_action :set_group
-  before_action :set_walk, only: [:show, :edit, :update, :delete]
+  before_action :set_walk, only: [:show, :edit, :update]
+
 
   def index
     @group = Group.find(params[:group_id])
@@ -9,7 +10,6 @@ class WalksController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -32,9 +32,20 @@ class WalksController < ApplicationController
   def join
     @profile_walk = ProfileWalk.new
     @profile_walk.profile = current_user.profile
+    @group = Group.find(params[:group_id].to_i)
     @profile_walk.walk = Walk.find(params[:walk_id])
     @profile_walk.save!
-    redirect_to group_walks_path(@profile, @walk)
+    redirect_to group_walks_path(@group)
+  end
+
+  def quit
+    @profile = current_user.profile
+    @group = Group.find(params[:group_id].to_i)
+    @walk = Walk.find(params[:profile_walk_id])
+    profile_walk = @profile.profile_walks
+    result = profile_walk.find { |walk| walk.walk_id == @walk.id}
+    result.destroy
+    redirect_to group_walks_path(@group)
   end
 
   def edit
