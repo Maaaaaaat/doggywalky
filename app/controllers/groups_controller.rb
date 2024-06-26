@@ -6,6 +6,9 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @chatroom = Chatroom.find(@group.associated_chatroom.to_i)
+    @message = Message.new
+    @profile = current_user.profile
   end
 
   def new
@@ -14,6 +17,8 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(groups_params)
+    @chatroom = Chatroom.create
+    @group.associated_chatroom = @chatroom.id
     if @group.save
       @group.profile_groups.create(profile: @profile)  # Association via ProfileGroup
       redirect_to profile_group_path(@profile, @group), notice: 'Groupe créé avec succès.'

@@ -40,10 +40,16 @@ Rails.application.routes.draw do
       delete 'quit', to: 'groups#quit'
   end
 
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
   # require "sidekiq/web"
   # authenticate :user, ->(user) do
   #   mount Sidekiq::Web => '/sidekiq'
   # end
+
 
 end
   # root "posts#index"
