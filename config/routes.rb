@@ -21,16 +21,16 @@ Rails.application.routes.draw do
   resources :walks, only: [:delete, :edit, :update]
 
   resources :groups do
-  get 'group_user', to: 'groups#group_user'
+    get 'group_user', to: 'groups#group_user'
   end
 
   resources :groups do
     post 'join', to: 'groups#join'
-    end
+  end
 
   resources :walks do
     post 'join', to: 'walks#join'
-    end
+  end
 
   resources :profile_walks do
     delete 'quit', to: 'walks#quit'
@@ -40,5 +40,9 @@ Rails.application.routes.draw do
       delete 'quit', to: 'groups#quit'
   end
 
-end
+  require "sidekiq/web"
+  authenticate :user, ->(user) do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+  end
   # root "posts#index"
