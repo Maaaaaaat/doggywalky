@@ -12,3 +12,4 @@ class Walk < ApplicationRecord
 #   end
 
 # end
+end
