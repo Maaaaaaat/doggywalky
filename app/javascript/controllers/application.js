@@ -8,5 +8,4 @@ window.Stimulus = application;
 export { application };
 
 import "controllers";
-import "../city_forms";
 import "@rails/actioncable"
