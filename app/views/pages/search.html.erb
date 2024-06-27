@@ -24,7 +24,11 @@
     <% filtered_groups.each do |group| %>
       <div class="card mb-3">
         <h4><%= group.name %></h4>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"  width="200"/>
+        <% if group.photo.present? %>
+              <%= cl_image_tag group.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <%= image_tag("https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", height: 300, width: 400, crop: :fill)%>
+            <% end %>
         <div>
           <% group.walks.where(id: @walks.pluck(:id)).each do |walk| %>
             <p><strong>Date:</strong> <%= walk.date %></p>
