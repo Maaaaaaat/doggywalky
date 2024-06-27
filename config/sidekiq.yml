@@ -10,7 +10,7 @@
   - active_storage_purge
 tasks: &tasks
   DeleteJob:
-    cron: "0 2 * * *" # every day at 02:00
+    cron: "0 3 * * *" # every day at 02:00
     queue: default
     description: "Write the utility of the job"
 :scheduler:
