@@ -9,7 +9,7 @@ class Walk < ApplicationRecord
   private
 
   def async_update
-    DeleteJob.perform_later(self)
+    DeleteJob.perform_later(self.id)
   end
 
 end
