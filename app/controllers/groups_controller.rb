@@ -29,6 +29,7 @@ class GroupsController < ApplicationController
 
   def group_user
     @group = Group.find(params[:group_id])
+    
     @dogs = @profile.dogs
   end
 

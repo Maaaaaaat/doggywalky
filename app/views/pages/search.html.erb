@@ -28,7 +28,7 @@
         <div>
           <% group.walks.where(id: @walks.pluck(:id)).each do |walk| %>
             <p><strong>Date:</strong> <%= walk.date %></p>
-            <p><strong>Heure de début:</strong> <%= walk.start_time %></p>
+            <p><strong>Heure de début:</strong> <%= walk.start_time.hour %>:<%= walk.start_time.min %>  </p>
             <p><strong>Adresse:</strong> <%= walk.adress %></p>
             <!-- Ajoutez d'autres informations pertinentes pour Walk ici -->
           <% end %>
