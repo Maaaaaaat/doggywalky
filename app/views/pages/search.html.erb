@@ -20,7 +20,7 @@
 
 <% if filtered_groups.any? %>
   <h3 class="mb-2">Groupes et Promenades</h3>
-  <div class="cards">
+  <div class="groups-card">
     <% filtered_groups.each do |group| %>
       <div class="card mb-3">
         <h4><%= group.name %></h4>
@@ -45,4 +45,9 @@
     <p>Aucun résultat trouvé correspondant à votre recherche.</p>
   <% end %>
 <% end %>
+</div>
+</div>
+<div class="edit-btn d-flex justify-content-end">
+<%= link_to "Homepage", root_path, id: 'margin-homepage' %>
+</div>
 </div>
