@@ -45,10 +45,11 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  # require "sidekiq/web"
-  # authenticate :user, ->(user) do
-  #   mount Sidekiq::Web => '/sidekiq'
-  # end
+  require "sidekiq/web"
+
+    authenticate :user do
+      mount Sidekiq::Web => '/sidekiq'
+    end
 
 
 end

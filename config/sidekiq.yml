@@ -1,18 +1,18 @@
-# :concurrency: 3
-# :timeout: 60
-# :verbose: true
-# :queues:
-#   # Queue priority:
-#   # https://github.com/sidekiq/sidekiq/wiki/Advanced-Options
-#   - default
-#   - mailers
-#   - active_storage_analysis
-#   - active_storage_purge
-# tasks: &tasks
-#   DeleteJob:
-#     cron: "0 2 * * *" # every day at 02:00
-#     queue: default
-#     description: "Write the utility of the job"
-# :scheduler:
-#   :schedule:
-#     <<: *tasks
+:concurrency: 3
+:timeout: 60
+:verbose: true
+:queues:
+  # Queue priority:
+  # https://github.com/sidekiq/sidekiq/wiki/Advanced-Options
+  - default
+  - mailers
+  - active_storage_analysis
+  - active_storage_purge
+tasks: &tasks
+  DeleteJob:
+    cron: "0 3 * * *" # every day at 02:00
+    queue: default
+    description: "Write the utility of the job"
+:scheduler:
+  :schedule:
+    <<: *tasks
