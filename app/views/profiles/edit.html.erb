@@ -47,11 +47,14 @@
 <% end %>
 <div class=" mt-3">
 <p class="mb-1">
-Vous voulez revenir en arrière?
+Vous voulez mettre le compte à jour?
 </p>
 <div class="edit-btn">
 <%= link_to "Editer le compte", edit_user_registration_path(@user) %>
 </div>
 <%= link_to "Supprimer le profil", profile_path(@profile), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "pt-3" %>
+</div>
+<div class="edit-btn d-flex justify-content-end">
+<%= link_to "Homepage", root_path %>
 </div>
 </div>
