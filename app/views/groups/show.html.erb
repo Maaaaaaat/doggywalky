@@ -56,6 +56,7 @@
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
 
-
-    <%= link_to "Revenir en arrière", :back %>
+    <div class="btn-div">
+    <%= link_to "Revenir en arrière", :back, data: {turbo_method: :delete}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+  </div>
 </div>
