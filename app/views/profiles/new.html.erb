@@ -27,11 +27,12 @@
                     input_html: { autocomplete: "off", class: 'custom-class', 'data-autocomplete-target': 'input' } %>
         <div id="city-suggestions" data-autocomplete-target="suggestions" class="custom-suggestions-list"></div>
       </div>
-    <%= f.input :street,
+        <%= f.input :street,
                 label: "Rue à proximité pour trouver des groupes",
                 required: true,
                 label_html: { class: 'form-label-custom' },
                 input_html: { autocomplete: "street", class: 'custom-class' } %>
+      <%= f.input :photo, as: :file %>
   </div>
 
   <div class="form-actions">

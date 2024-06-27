@@ -3,7 +3,7 @@
 
 <div class="card-product">
 
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+<%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
 
       <% @group.profiles.each do | profile |%>
 
