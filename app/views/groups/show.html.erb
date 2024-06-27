@@ -1,4 +1,4 @@
-<p class="container">Bienvenue sur la page d'accueil de <%= @group.name %></p>
+<p class="container"><%= @group.name %></p>
 <h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="container">
@@ -37,7 +37,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
-  <h1>#<%= @chatroom.name %></h1>
+  <h1>Chat</h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
