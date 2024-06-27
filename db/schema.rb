@@ -66,9 +66,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_26_202459) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "street"
     t.float "latitude"
     t.float "longitude"
+    t.string "street"
     t.integer "associated_chatroom"
   end
 
