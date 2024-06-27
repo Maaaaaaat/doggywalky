@@ -5,10 +5,10 @@ class Walk < ApplicationRecord
 
   after_save :async_update, on: [:create, :update]
 
-  private
+#   private
 
-  def async_update
-    DeleteJob.perform_later(self.id)
-  end
+#   def async_update
+#     DeleteJob.perform_later(self.id)
+#   end
 
-end
+# end
