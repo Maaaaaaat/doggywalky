@@ -3,7 +3,7 @@
   <div class="header fixed-top">
     <% if user_signed_in? %>
       <div class="dropdown" data-controller="dropdown">
-        <% if @profile.photo.present? %>
+        <% if @profile && @profile.photo.present? %>
           <%= cl_image_tag(@profile.photo.key, class: "avatar-bordered dropdown-toggle", alt: "avatar-bordered", id: "dropdownMenuButton", data: { bs_toggle: "dropdown", action: "click->dropdown#drop" }, 'aria-expanded': "false") %>
         <% else %>
           <%= image_tag("https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", class: "avatar-bordered dropdown-toggle", alt: "avatar-bordered", id: "dropdownMenuButton", data: { bs_toggle: "dropdown", action: "click->dropdown#drop" }, 'aria-expanded': "false") %>
