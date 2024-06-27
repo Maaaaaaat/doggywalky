@@ -13,12 +13,15 @@
                   autofocus: true,
                   label_html: { class: 'form-label-custom' },
                   input_html: { class: 'custom-class' } %>
-      <%= f.input :city,
-                  label: "Ville",
-                  required: true,
-                  autofocus: true,
-                  label_html: { class: 'form-label-custom' },
-                  input_html: { class: 'custom-class' } %>
+    <div data-controller="autocomplete" data-action="input->autocomplete#updateSuggestions">
+        <%= f.input :city,
+                    label: "Ville",
+                    required: false,
+                    autofocus: true,
+                    label_html: { class: 'form-label-custom' },
+                    input_html: { autocomplete: "off", class: 'custom-class', 'data-autocomplete-target': 'input' } %>
+        <div id="city-suggestions" data-autocomplete-target="suggestions" class="custom-suggestions-list"></div>
+      </div>
       <%= f.input :description,
                   label: "Description",
                   as: :text,
