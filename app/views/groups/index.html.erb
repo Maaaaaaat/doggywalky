@@ -13,7 +13,7 @@
             <% if group.photo.present? %>
               <%= cl_image_tag group.photo.key, height: 300, width: 400, crop: :fill %>
             <% else %>
-              <%= cl_image_tag "https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", height: 300, width: 400, crop: :fill %>
+              <%= image_tag("https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", height: 300, width: 400, crop: :fill)%>
             <% end %>
             <div class="card-product-infos">
               <h2><%= group.name %></h2>
