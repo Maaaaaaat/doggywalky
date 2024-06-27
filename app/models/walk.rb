@@ -3,13 +3,13 @@ class Walk < ApplicationRecord
   belongs_to :group
   has_many :profile_walks
 
-  after_save :async_update, on: [:create, :update]
+#   after_save :async_update, on: [:create, :update]
 
-#   private
+# #   private
 
-#   def async_update
-#     DeleteJob.perform_later(self.id)
-#   end
+# #   def async_update
+# #     DeleteJob.perform_later(self.id)
+# #   end
 
-# end
+
 end
