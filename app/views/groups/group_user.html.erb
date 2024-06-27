@@ -6,7 +6,7 @@
     <% @group.profiles.each do | profile |%>
     <div class="card-product">
       <% if profile.photo.attached? %>
-        <%= cl_image_tag(@profile.photo.key, height: 300, width: 400, crop: :fill)%>
+        <%= cl_image_tag(profile.photo.key, height: 300, width: 400, crop: :fill)%>
       <% end %>
       <div class="card-product-infos">
         <h2><%= profile.username%></h2>
@@ -18,7 +18,3 @@
 <%= link_to "Revenir en arrière", :back %>
 </div>
 </div>
-
-
-
-
