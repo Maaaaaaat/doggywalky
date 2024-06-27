@@ -10,7 +10,7 @@
       <% @groups.each do |group| %>
         <%= link_to profile_group_path(@profile, group), class: "card-link" do %>
           <div class="card-product">
-            <%= cl_image_tag("qlqwg0ygtzhztwy8kdzb", alt: group.name) %>
+           <%= cl_image_tag group.photo.key, height: 300, width: 400, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= group.name %></h2>
               <p><%= group.description %></p>
