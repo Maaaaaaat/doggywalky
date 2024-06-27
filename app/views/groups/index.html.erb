@@ -10,7 +10,11 @@
       <% @groups.each do |group| %>
         <%= link_to profile_group_path(@profile, group), class: "card-link" do %>
           <div class="card-product">
-           <%= cl_image_tag group.photo.key, height: 300, width: 400, crop: :fill %>
+            <% if group.photo.present? %>
+              <%= cl_image_tag group.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag "https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", height: 300, width: 400, crop: :fill %>
+            <% end %>
             <div class="card-product-infos">
               <h2><%= group.name %></h2>
               <p><%= group.description %></p>
@@ -22,6 +26,5 @@
   <% else %>
     <p>Vous n'appartenez à aucun groupe pour le moment.</p>
   <% end %>
-<%= link_to "Revenir vers la Homepage", root_path %>
-
+  <%= link_to "Revenir vers la Homepage", root_path %>
 </div>
