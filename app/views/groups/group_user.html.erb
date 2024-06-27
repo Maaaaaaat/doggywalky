@@ -1,23 +1,24 @@
 <div class="container mt-3">
 <h1 class="mb-3">Membres de <%= @group.name %></h1>
 
-<div class="card-product">
 
-<%= cl_image_tag @profile.photo.key, height: 300, width: 400, crop: :fill %>
 
-      <% @group.profiles.each do | profile |%>
+    <% @group.profiles.each do | profile |%>
+    <div class="card-product">
+      <% if profile.photo.attached? %>
+        <%= cl_image_tag(@profile.photo.key, height: 300, width: 400, crop: :fill)%>
+      <% end %>
+      <div class="card-product-infos">
+        <h2><%= profile.username%></h2>
 
-  <div class="card-product-infos">
-    <h2><%= profile.username%></h2>
-    <% @dogs.each do |dog|%>
-    <p><%= dog.name%></p>
-    <p><%= dog.breed %></p>
-
+     </div>
   </div>
   <% end %>
-  <% end %>
-</div>
 <div class="edit-btn">
 <%= link_to "Revenir en arrière", :back %>
 </div>
 </div>
+
+
+
+
