@@ -11,6 +11,7 @@ puts "begin"
 
 Message.destroy_all
 Dog.destroy_all
+ProfileWalk.destroy_all
 Walk.destroy_all
 ProfileGroup.destroy_all
 Group.destroy_all
@@ -81,16 +82,24 @@ dog4 = Dog.create!(
 
 puts "Creating groups..."
 
+chatroom1 = Chatroom.create
+
 group1 = Group.create!(
   name: 'Balades à minuit',
-  city: 'Monaco',
-  description: 'On se balade.'
+  city: 'paris',
+  description: 'On se balade.',
+  associated_chatroom: chatroom1.id,
+  longitude: -4.25,
+  latitude: 46
 )
+
+chatroom2 = Chatroom.create
 
 group2 = Group.create!(
   name: 'Toutou Club',
-  city: 'Nice',
+  city: 'bordeaux',
   description: 'A group for toutou lovers.',
+  associated_chatroom: chatroom2.id
 )
 
 group3 = Group.create!(
@@ -119,36 +128,43 @@ ProfileGroup.create!(profile: profile1, group: group3)
 
 puts "Creating Walks..."
 
-walk2 = Walk.create!(
-  date: Date.today,
-  start_time: Time.now,
-  adress: "25 avenue de la Gare",
-  group_id: group2.id,
-  profile_id: profile1.id,
-)
+# walk2 = Walk.create!(
+#   date: Date.today,
+#   start_time: Time.now,
+#   adress: "25 avenue de la Gare",
+#   group_id: group1.id,
+#   profile_id: profile1.id,
+# )
 
-walk3 = Walk.create!(
-  date: Date.today,
-  start_time: Time.current,
-  adress: "20 avenue de france",
-  group_id: group2.id,
-  profile_id: profile1.id,
-)
+# walk3 = Walk.create!(
+#   date: Date.today,
+#   start_time: Time.current,
+#   adress: "20 avenue de france",
+#   group_id: group2.id,
+#   profile_id: profile1.id,
+# )
 
-walk4 = Walk.create!(
-  date: Date.today,
-  start_time: Time.current,
-  adress: "12 boulevard du marché",
-  group_id: group2.id,
-  profile_id: profile1.id,
-)
+# walk4 = Walk.create!(
+#   date: Date.today,
+#   start_time: Time.current,
+#   adress: "12 boulevard du marché",
+#   group_id: group2.id,
+#   profile_id: profile1.id,
+# )
 
-walk5 = Walk.create!(
-  date: Date.today,
-  start_time: Time.current,
-  adress: "3 rue de france",
-  group_id: group2.id,
-  profile_id: profile1.id,
-)
+# walk5 = Walk.create!(
+#   date: Date.today,
+
+#   start_time: Time.current,
+#   adress: "3 rue de france",
+#   group_id: group2.id,
+#   profile_id: profile1.id,
+# )
+
+# puts "Creating ProfileWalks..."
+
+# ProfileWalk.create!(profile: profile1, walk: walk1)
+# ProfileWalk.create!(profile: profile1, walk: walk2)
+# ProfileWalk.create!(profile: profile1, walk: walk3)
 
 puts "Finished"

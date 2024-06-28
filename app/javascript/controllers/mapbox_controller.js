@@ -7,6 +7,11 @@ mapboxgl.accessToken = ACCESS_TOKEN;
 // Connects to data-controller="map"
 export default class extends Controller {
   static targets = ["map"];
+  static values = {
+    longitude: Number,
+    latitude: Number,
+    id: Number
+  }
 
   initialize() {
     const map = new mapboxgl.Map({
