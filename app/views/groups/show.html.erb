@@ -1,4 +1,4 @@
-<p class="container">Bienvenue sur la page d'accueil de <%= @group.name %></p>
+<p class="container text-center">Bienvenue sur la page d'accueil de <%= @group.name %></p>
 <h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="container">
@@ -37,7 +37,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
-  <h1>#<%= @chatroom.name %></h1>
+  <p>Messagerie de <%= @group.name %></p>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -50,12 +50,13 @@
 %>
   <%= f.input :content,
     label: false,
-    placeholder: "Message ##{@chatroom.name}",
-    wrapper_html: {class: "flex-grow-1"}
+    placeholder: "Message",
+    wrapper_html: {class: "flex-grow-1 "}
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
 
-
+<div class="sign-btn">
     <%= link_to "Revenir en arrière", :back %>
+    </div>
 </div>
