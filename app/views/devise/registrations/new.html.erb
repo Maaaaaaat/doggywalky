@@ -1,5 +1,5 @@
 <div class="container">
-<h2 class="mt-5">Créer un compte</h2>
+<h2 class="mt-5 text-center">Créer un compte</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -40,11 +40,11 @@
     <%= f.button :submit, "Valider 🐶", class: "button-form" %>
   </div>
 <% end %>
-<div class="d-flex justify-content-between mt-3">
+<div class="mt-3">
 <p>
 Vous avez déjà un compte ?
 </p>
-<div class="sign-btn">
+<div class="sign-btn ">
 <%= render "devise/shared/links" %>
 </div>
 </div>
