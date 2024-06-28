@@ -3,7 +3,7 @@
 <h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="container">
-<div class="button-group">
+<div class="mt-2 button-group">
   <div class="button-group-category-showgr">
     <%= link_to group_walks_path(@group), class: 'card-link-grp' do %>
       <div class="card-content">Les sorties à venir</div>
@@ -24,12 +24,12 @@
 </div>
 
    <% if !current_user.profile.groups.include?(@group) %>
-  <div class="btn-div">
+  <div class="mt-4 mb-3 btn-div">
     <%= link_to "Rejoins le Groupe 🐶", group_join_path(@group), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
   </div>
    <% end %>
    <% if current_user.profile.groups.include?(@group) %>
-    <div class="btn-div">
+    <div class="mt-4 mb-3 btn-div">
     <%= link_to "Quitter le groupe 🐶", profile_group_quit_path(@group), data: {turbo_method: :delete}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
   </div>
     <% end %>
@@ -56,7 +56,7 @@
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
-    <div class="btn-div">
+    <div class="mt-3 mb-2 btn-div">
     <%= link_to "Revenir en arrière", :back, data: {turbo_method: :delete}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
   </div>
 </div>
