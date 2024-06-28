@@ -1,4 +1,4 @@
-<p class="container">Bienvenue sur la page d'accueil de <%= @group.name %></p>
+<p class="container">Bienvenue sur le groupe <%= @group.name %></p>
 <h1 style="margin-left: 150px; margin-top: 15px;"><%= @group_name %></h1>
 
 <div class="container">
@@ -11,13 +11,13 @@
 
   <div class="button-group-category-showgr">
     <%= link_to new_group_walk_path(@group), class: 'card-link-grp' do %>
-      <div class="card-content">Crée ta Sortie</div>
+      <div class="card-content">Créer une Sortie</div>
     <% end %>
   </div>
 
   <div class="button-group-category-showgr">
     <%= link_to group_group_user_path(@group), class: 'card-link-grp' do %>
-      <div class="card-content">La liste des Membres</div>
+      <div class="card-content">Liste des membres</div>
     <% end %>
   </div>
 </div>
@@ -37,7 +37,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
 
-  <h1>#<%= @chatroom.name %></h1>
+  <h1>Messagerie</h1>
 
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
@@ -56,6 +56,7 @@
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
 <% end %>
 
-
-    <%= link_to "Revenir en arrière", :back %>
+    <div class="btn-div">
+    <%= link_to "Revenir en arrière", :back, data: {turbo_method: :delete}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+  </div>
 </div>

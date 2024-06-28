@@ -14,7 +14,7 @@
 
           <% if !current_user.profile.profile_walks.include?(ProfileWalk.find_by(walk_id: walk.id)) %>
         <div class="btn-div">
-          <%= link_to "Rejoins la sortie 🐶", walk_join_path(walk, group_id: @group.id), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
+          <%= link_to "Rejoindre la sortie 🐶", walk_join_path(walk, group_id: @group.id), data: {turbo_method: :post}, class: "button-form btn btn-link", style: "text-decoration:none;" %>
         </div>
           <% end %>
           <% if current_user.profile.profile_walks.include?(ProfileWalk.find_by(walk_id: walk.id)) %>

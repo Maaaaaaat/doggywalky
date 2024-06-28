@@ -15,11 +15,11 @@
           <% else %>
             <li><%= link_to 'Créer un profil', new_profile_path, class: 'dropdown-item' %></li>
           <% end %>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item logout-link" %></li>
+          <li><%= link_to "Se deconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item logout-link" %></li>
         </ul>
       </div>
     <% else %>
-      <%= cl_image_tag("https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", class: "avatar-bordered", alt: "avatar-bordered") %>
+      <%= image_tag("https://res.cloudinary.com/drp9liavk/image/upload/v1719308669/avatar2_byf4no.png", class: "avatar-bordered", alt: "avatar-bordered") %>
     <% end %>
   </div>
 </div>
